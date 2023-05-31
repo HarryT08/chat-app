@@ -13,23 +13,25 @@
         android:theme="@style/Theme.Chatapp"
         tools:targetApi="31">
         <activity
+            android:name=".SetupProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".OTPActivity"
             android:exported="false" />
         <activity
             android:name=".VerificationActivity"
-            android:exported="false" />
-
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-        <activity
-            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Chatapp"></activity>
+            android:theme="@style/Theme.Chatapp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

@@ -1,10 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background_shape"
+    android:layout_gravity="center"
     tools:context=".OTPActivity">
+    <ImageView
+        android:src="@drawable/otp"
+        android:scaleType="centerCrop"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Verificación OTP"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/phoneLbl"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="6dp"
+        android:text="Escribe el OTP enviado a +234 111 222 333."
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+    <androidx.cardview.widget.CardView
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="8dp"
+        android:elevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.mukesh.OtpView
+            android:id="@+id/otp_view"
+            android:layout_gravity="center"
+            android:inputType="number"
+            android:focusableInTouchMode="true"
+            android:textColor="@android:color/white"
+            app:OtpLineColor="@color/white"
+            app:OtpState_filled="true"
+            app:OtpItemCount="6"
+            app:OtpViewType="line"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/continueBtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Verificar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/bordes_redondos"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+</LinearLayout>

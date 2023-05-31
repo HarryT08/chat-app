@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "987131247426",
+    "project_id": "movil2022-2",
+    "storage_bucket": "movil2022-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987131247426:android:a02d87637af1c9b7a966db",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987131247426-85svltdt01ugiv3um5glslr003a7jk2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCInXkXpHmjNGEGvh8xJSWGKoYuFY2tysY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987131247426-85svltdt01ugiv3um5glslr003a7jk2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
