@@ -1,10 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SetupProfileActivity">
+    android:orientation="vertical"
+    android:background="@drawable/background_shape"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:gravity="center_horizontal"
+    tools:context=".VerificationActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- <TextView
+        android:layout_marginTop="30dp"
+        android:textAlignment="textStart"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:text="Perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+    />  NO BORREN ESTO, SIRVE PARA LA OTRA VISTA DE PERFIL XD -->
+
+
+    <TextView
+        android:layout_marginTop="35dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informacion de Perfil"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:src="@drawable/user"
+        android:id="@+id/imageUser"
+        android:layout_marginTop="25dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+    />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="15dp"
+
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/username"
+            android:textAlignment="textStart"
+            android:hint="Nombre de usuario"
+            android:textColorHint="@color/white"
+            android:ems="1"
+            android:inputType="phone"
+            android:textSize="15sp"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:backgroundTint="@android:color/white"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/profileName"
+            android:textAlignment="textStart"
+            android:hint="Nombre"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/white"
+            android:ems="1"
+            android:inputType="phone"
+            android:textSize="15sp"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:backgroundTint="@android:color/white"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/profileLastname"
+            android:textAlignment="textStart"
+            android:hint="Apellido"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/white"
+            android:ems="1"
+            android:inputType="phone"
+            android:textSize="15sp"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:backgroundTint="@android:color/white"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:textAlignment="textStart"
+            android:hint="Correo Electronico"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/white"
+            android:ems="1"
+            android:inputType="phone"
+            android:textSize="15sp"
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:backgroundTint="@android:color/white"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
+            android:id="@+id/profileContinueBtn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:text="Siguiente"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/bordes_redondos"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
