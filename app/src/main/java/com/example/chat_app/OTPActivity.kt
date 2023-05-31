@@ -21,6 +21,8 @@ class OTPActivity : AppCompatActivity() {
     var auth: FirebaseAuth? = null
     var dialog: ProgressDialog? = null
 
+    //Proof Comment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +59,7 @@ class OTPActivity : AppCompatActivity() {
                     binding!!.otpView.requestFocus()
                 }
             }).build()
+
         PhoneAuthProvider.verifyPhoneNumber(options)
         binding!!.otpView.setOtpCompletionListener({otp->
             val credential = PhoneAuthProvider.getCredential(verificationId!!,otp)
