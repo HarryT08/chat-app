@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background_shape"
+    tools:context=".MainActivity">
+    <TextView
+        android:text="@string/salas_de_chat"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!--<TextView
+        android:text="loremImpsum"
+        android:textSize="13sp"
+        android:textStyle="bold|normal"
+        android:textAlignment="textStart"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/> -->
+    <View
+        android:background="#423B3B"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="9dp"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRec"
+            tools:listitem="@layout/item_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
