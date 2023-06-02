@@ -13,6 +13,16 @@
         android:theme="@style/Theme.Chatapp"
         tools:targetApi="31">
         <activity
+            android:name=".PrincipalActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Chatapp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SetupProfileActivity"
             android:exported="false" />
         <activity
@@ -20,18 +30,11 @@
             android:exported="false" />
         <activity
             android:name=".VerificationActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Chatapp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
+            android:name=".ChatsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class MainActivity : ComponentActivity() {
+class ChatsActivity : ComponentActivity() {
     var binding: ActivityMainBinding? = null
     var database: FirebaseDatabase? = null
     var user: User? = null
@@ -24,13 +24,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
-        dialog = ProgressDialog(this@MainActivity)
+        dialog = ProgressDialog(this@ChatsActivity)
         dialog!!.setMessage("Uploading Image...")
         dialog!!.setCancelable(false)
         database = FirebaseDatabase.getInstance()
         users = ArrayList<User>()
-        usersAdapter = UserAdapter(this@MainActivity,users!!)
-        val layoutManager = GridLayoutManager(this@MainActivity,1)
+        usersAdapter = UserAdapter(this@ChatsActivity,users!!)
+        val layoutManager = GridLayoutManager(this@ChatsActivity,1)
         binding!!.mRec.layoutManager = layoutManager
         database!!.reference.child("users")
             .child(FirebaseAuth.getInstance().uid!!)

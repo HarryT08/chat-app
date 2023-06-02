@@ -17,7 +17,7 @@ class VerificationActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         if(auth!!.currentUser != null){
-            val intent = Intent(this@VerificationActivity, MainActivity::class.java)
+            val intent = Intent(this@VerificationActivity, ChatsActivity::class.java)
             startActivity(intent)
             finish()
         }

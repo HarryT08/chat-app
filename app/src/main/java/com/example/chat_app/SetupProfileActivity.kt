@@ -23,6 +23,7 @@ class SetupProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySetupProfileBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
+        dialog = ProgressDialog(this@SetupProfileActivity)
         dialog!!.setMessage("Updating Profile...")
         dialog!!.setCancelable(false)
         database = FirebaseDatabase.getInstance()
@@ -80,7 +81,7 @@ class SetupProfileActivity : AppCompatActivity() {
                                 .setValue(user)
                                 .addOnCompleteListener {
                                     dialog!!.dismiss()
-                                    val intent = Intent(this@SetupProfileActivity, MainActivity::class.java)
+                                    val intent = Intent(this@SetupProfileActivity, ChatsActivity::class.java)
                                     startActivity(intent)
                                     finish()
                                 }
@@ -101,7 +102,7 @@ class SetupProfileActivity : AppCompatActivity() {
                             .setValue(user)
                             .addOnCanceledListener {
                                 dialog!!.dismiss()
-                                val intent = Intent(this@SetupProfileActivity, MainActivity::class.java)
+                                val intent = Intent(this@SetupProfileActivity, ChatsActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             }

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/background_shape"
-    tools:context=".MainActivity">
+    tools:context=".ChatsActivity">
     <TextView
         android:text="@string/salas_de_chat"
         android:textSize="25sp"
