@@ -13,9 +13,10 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textAlignment="textStart"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="15dp"
         android:textColor="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -29,12 +30,6 @@
         android:textColor="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/> -->
-    <View
-        android:background="#423B3B"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="9dp"
-        android:layout_height="1dp"/>
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginTop="6dp"

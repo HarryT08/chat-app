@@ -5,11 +5,16 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.util.Log
+import android.widget.Toast
 import com.example.chat_app.databinding.ActivitySetupProfileBinding
 import com.example.chat_app.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import java.util.Date
+import java.util.HashMap
 
 class SetupProfileActivity : AppCompatActivity() {
     var binding:ActivitySetupProfileBinding? = null
@@ -43,20 +48,30 @@ class SetupProfileActivity : AppCompatActivity() {
             val username : String = binding!!.username.text.toString()
             val email : String = binding!!.email.text.toString()
 
+            if(selectedImage == null) {
+                Toast.makeText(this@SetupProfileActivity, "Porfavor inserte una imagen de perfil", Toast.LENGTH_LONG).show()
+                //binding!!.profileName.setError("Porfavor una imagen de perfil")
+                return@setOnClickListener
+            }
+
             if(name.isEmpty()) {
                 binding!!.profileName.setError("Porfavor ingresa un nombre")
+                return@setOnClickListener
             }
 
             if(lastname.isEmpty()) {
                 binding!!.profileLastname.setError("Porfavor ingresa un apellido")
+                return@setOnClickListener
             }
 
             if(username.isEmpty()) {
                 binding!!.username.setError("Porfavor ingresa un nombre de usuario")
+                return@setOnClickListener
             }
 
             if(email.isEmpty()) {
                 binding!!.email.setError("Porfavor ingresa un email")
+                return@setOnClickListener
             }
 
             dialog!!.show()
@@ -100,7 +115,7 @@ class SetupProfileActivity : AppCompatActivity() {
                             .child("users")
                             .child(uid!!)
                             .setValue(user)
-                            .addOnCanceledListener {
+                            .addOnCompleteListener {
                                 dialog!!.dismiss()
                                 val intent = Intent(this@SetupProfileActivity, ChatsActivity::class.java)
                                 startActivity(intent)
@@ -109,9 +124,38 @@ class SetupProfileActivity : AppCompatActivity() {
                     }
                 }
             }
-
-
         }
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(data != null){
+            if(data.data != null){
+                val uri = data.data
+                val storage = FirebaseStorage.getInstance()
+                val time = Date().time
+                val reference = storage.reference
+                    .child("Profile")
+                    .child(time.toString() + "")
+                reference.putFile(uri!!).addOnCompleteListener { task ->
+                    if(task.isSuccessful){
+                        reference.downloadUrl.addOnCompleteListener { uri ->
+                            val filePath = uri.toString()
+                            val obj = HashMap<String,Any>()
+                            obj["image"] = filePath
+                            database!!.reference
+                                .child("users")
+                                .child(FirebaseAuth.getInstance().uid!!)
+                                .updateChildren(obj).addOnSuccessListener {  }
+                        }
+                    }
+
+                }
+
+                binding!!.imageUser.setImageURI(data.data)
+                selectedImage = data.data
+            }
+        }
     }
 }

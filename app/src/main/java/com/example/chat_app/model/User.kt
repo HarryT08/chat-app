@@ -8,6 +8,7 @@ class User {
     var email:String? = null
     var username:String? = null
     var profileImage:String? = null
+    var lastMsg: String? = null
 
     constructor(){}
     constructor(

@@ -1,11 +1,13 @@
 package com.example.chat_app.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.chat_app.ChatActivity
 import com.example.chat_app.R
 import com.example.chat_app.databinding.ItemProfileBinding
 import com.example.chat_app.model.User
@@ -27,8 +29,17 @@ RecyclerView.Adapter<UserAdapter.UserViewHolder>()
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = userList[position]
         holder.binding.username.text = user.name
+        holder.binding.lastMessage.text = user.lastMsg
         Glide.with(context).load(user.profileImage)
             .placeholder(R.drawable.user)
             .into(holder.binding.profile)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("name", user.name)
+            intent.putExtra("image", user.profileImage)
+            intent.putExtra("uid", user.uid)
+            context.startActivity(intent)
+        }
     }
 }
